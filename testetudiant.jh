@@ -1,0 +1,36 @@
+
+entity Etudiant {
+	nom String
+    prenom String
+    age Integer
+    
+}
+
+entity Cours {
+	nom String
+    coef Integer
+}
+
+
+enum Language {
+    FRENCH, ENGLISH
+}
+
+relationship OneToMany {
+		Etudiant to Cours{etudiant}
+	
+}
+
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate Etudiant with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Etufiant, Cours
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
